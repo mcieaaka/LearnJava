@@ -44,6 +44,6 @@ public class q8
 		if(res==1)
 			System.out.println("S is in A");
 		else
-			System.out.println("S is in A");
+			System.out.println("S is not in A");
 	}
 }
