@@ -38,6 +38,7 @@ public class q8
 		System.out.println("Enter no. to be searched");
 		
 		s=sc.nextInt();
+		
 		int f=0;
 		int l=n-1;
 		int res=Binary(a,n,s,f,l);
