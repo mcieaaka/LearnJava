@@ -34,6 +34,7 @@ public class q9
 		{
 			a[i]=sc.nextInt();
 		}
+		//Find Sum and Average
 		Sum(a);
 		Mean(a);
 	}
