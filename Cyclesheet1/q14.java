@@ -4,20 +4,24 @@ public class q14
 	public static void main(String args[])
 	{
 		Scanner sc = new Scanner(System.in);
-		String s = sc.next();
-		String s2;
+		String s = new String();
+		s=sc.next();
+		String s2= new String();
+		String s3 = new String();
 		System.out.println(s);
 		char temp;
-		for(int i=0;s.length;i++)
+		for(int i=0;i<s.length();i++)
 		{
-			if(s.charAt(i).isLowercase())
+			temp=s.charAt(i);
+			if(s2.isLowerCase())
 			{
-				temp=s.charAt(i).toUpperCase();
-				
+				s2.toUpperCase();
 			}
 			else
-				s[i].toLowerCase();
+				s2.toLowerCase();
+			
+			s3 =s3+s2;
 		}
-		System.out.println(s);
+		System.out.println(s3);
 	}
 }

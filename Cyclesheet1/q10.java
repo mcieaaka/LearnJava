@@ -19,17 +19,8 @@ public class q10
 		{
 			System.out.print(s1.pop());
 		}
-		/*temp = n;
-		System.out.println("Octal:");
-		if(temp<8)
-			System.out.println(n);
-		else
-		{
-			while(temp!=0)
-			{
-				System.out.print(temp%8);
-				temp=temp/8;
-			}
-		}*/
+		System.out.println();
+		System.out.println("Octal="+Integer.toOctalString(n));
+		System.out.println("Hexadecimal="+Integer.toHexString(n));
 	}
 }	

@@ -18,7 +18,7 @@ public class q9
 		{
 			s=s+a[i];
 		}
-		float m=s/a.length;
+		float m=(float)s/(float)a.length;
 		System.out.println("Average="+m);
 	}
 		

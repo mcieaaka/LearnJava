@@ -5,7 +5,7 @@ public class q11
 	{
 		String s1 = "abc";
 		String s2 = "def";
-		String s3 = s1.concat(s2);
+		String s3 = s1+s2;
 		System.out.println("S1="+s1+"S2="+s2);
 		System.out.println("Concatenated: "+s3);
 	}
