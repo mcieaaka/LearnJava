@@ -1,4 +1,6 @@
+package com.company;
 import java.util.Scanner;
+
 abstract class BankAccount {
     String name, dob, address;
     long acc_no;
@@ -6,6 +8,7 @@ abstract class BankAccount {
     public abstract String get();
     public abstract void deposit();
     public abstract void withdraw();
+
 }
 
 class SavingsAccount extends BankAccount{
@@ -30,21 +33,18 @@ class SavingsAccount extends BankAccount{
     public void deposit(){
         Scanner sc=new Scanner(System.in);
         int money= sc.nextInt();
-        super.balance=super.balance+money;
+        super.balance+=money;
     }
 }
 
-public class q19
-{
-    public static void main(String args[])
-    {
-        System.out.println("Harshit Srivastava 19BCE0382");
+class Bank{
+    public static void main(String[] arg) {
         Scanner sc = new Scanner(System.in);
         String name,address,dob;
         int choice,total = 1, flag = 0,amount;
         long num=3800,acc,del;
         String flush;
-        SavingsAccount obj[] = new SavingsAccount[100];
+        BankAccount[] obj = new SavingsAccount[100];
         while (flag == 0) {
             System.out.print("\n\n1.Create Account\n2.Delete Account\n3.Withdraw" +
                     "\n4.Deposit\n5.Exit Menu\n");
@@ -52,21 +52,21 @@ public class q19
             switch (choice)
             {
                 case 1:
-                    //flush=sc.nextLine();
+                    flush=sc.nextLine();
                     System.out.print("\nName: ");
-                    name=sc.next();
+                    name=sc.nextLine();
 
                     System.out.print("\nDob: ");
-                    dob=sc.next();
+                    dob=sc.nextLine();
 
                     System.out.print("\nAddress: ");
-                    address=sc.next();
+                    address=sc.nextLine();
 
                     acc=num;
                     System.out.print("\nNew Account Number: "+acc);
 
                     amount=0;
-                    obj[total-1] = new SavingsAccount(name,dob,acc,address,amount);
+                    obj[total-1]=new SavingsAccount(name,dob,acc,address,amount);
 
                     total++;
                     num++;
@@ -116,7 +116,7 @@ public class q19
                     }
                     break;
                 case 5:
-                    System.exit(0);
+                    flag=1;
                     break;
             }
         }

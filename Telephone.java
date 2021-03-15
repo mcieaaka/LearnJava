@@ -1,8 +1,10 @@
 import java.util.Scanner;
- class Telephone {
+
+public class Telephone {
     String name;
     String phone;
 }
+
 class TelephoneIndex extends Telephone{
     TelephoneIndex(String x,String y)
     {
@@ -27,35 +29,33 @@ class TelephoneIndex extends Telephone{
         return (name+"\t"+phone+"\n");
     }
 }
-class q18 {
+
+class TelephoneMain {
     public static void main(String[] arg)
     {
-        System.out.println("Harshit Srivastava 19BCE0382");
+        System.out.print("Mohit Suhasaria\t19BCE2167\n");
         Scanner s=new Scanner(System.in);
-        TelephoneIndex[] ti=new TelephoneIndex[3];
+        TelephoneIndex[] ti=new TelephoneIndex[5];
         int i;
-        for (i=0;i<3;i++)
+        for (i=0;i<5;i++)
         {
-            System.out.print("Name: ");
+            System.out.print("\nName: ");
             String x= s.nextLine();
-            System.out.print("Number: ");
+            System.out.print("\nNumber: ");
             String y=s.nextLine();
             ti[i]=new TelephoneIndex(x,y);
         }
         String find,flsh;
-        //flsh=s.nextLine();
+        flsh=s.nextLine();
         find= s.nextLine();
-        for (i=0;i<3;i++)
-        {
+        for (i=0;i<5;i++)
             if (ti[i].Get().startsWith(find))
                 System.out.print("\n"+ti[i].Get());
-        }
-        System.out.println("Enter the index of Detail you want to change");
         int index=s.nextInt();
         flsh=s.nextLine();
         ti[index].change_name();
         ti[index].change_number();
-        for (i=0;i<3;i++)
-            System.out.print("\n"+ti[i].Get());
+        for (i=0;i<5;i++)
+        System.out.print("\n"+ti[i].Get());
     }
 }
