@@ -4,6 +4,7 @@ public class q5
 {
 public static void main(String args[])
 {
+	System.out.println("Harshit Srivastava 19BCE0382");
 	int i,j;
 	System.out.println("(i)Pattern 1:");
 	for(i=1; i<=3; i++)

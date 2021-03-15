@@ -46,19 +46,20 @@ class q16
     }
     static void disp(student o)
     {
-        System.out.println(o.name);
-        System.out.println(o.RegNo);
-        System.out.println(o.branch);
-        System.out.println(o.year);
-        System.out.println(o.semester);
+        System.out.println("Name:         "+o.name);
+        System.out.println("Register No.: "+o.RegNo);
+        System.out.println("Branch:       "+o.branch);
+        System.out.println("Year:         "+o.year);
+        System.out.println("Semester:     "+o.semester);
         for(int i=0; i<5;i++)
         {
-            System.out.println("Marks   Grades");
-            System.out.println(" "+o.marks[i]+"   "+o.grade[i]);
+            System.out.println("Marks   Grade");
+            System.out.println(" "+o.marks[i]+"      "+o.grade[i]);
         }
     }
     public static void main(String args[])
     {
+        System.out.println("Harshit Srivastava 19BCE0382");
         student s1 = new student();
         details(s1);
         eval_grade(s1);

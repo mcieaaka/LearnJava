@@ -31,13 +31,14 @@ class methods
                 ch = arr[i];
             }
         }
-        System.out.println("Most Frequent:"+ch);
+        System.out.println("Most Frequent in "+a+" = "+ch);
     }
 }
 public class q15
 {
     public static void main(String args[])
     {
+        System.out.println("Harshit Srivastava 19BCE0382");
         methods obj = new methods();
         String a1 = new String();
         a1="Hello there, how are you?";

@@ -3,6 +3,7 @@ public class q3
 {
 	public static void main(String args[])
 	{
+		System.out.println("Harshit Srivastava 19BCE0382");
 		Scanner sc = new Scanner(System.in);
 		int i,n,t,t2,s=0;
 		System.out.println("Enter a no. to check Armstrong");

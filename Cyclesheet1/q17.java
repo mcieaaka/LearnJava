@@ -28,6 +28,7 @@ public class q17
 {
     public static void main (String args[])
     {
+        System.out.println("Harshit Srivastava 19BCE0382");
         bill ob[] = new bill [3];
         for(int i = 0; i<3;i++)
         {

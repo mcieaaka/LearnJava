@@ -3,6 +3,7 @@ public class q1
 {
 	public static void main(String args[])
 	{
+		System.out.println("Harshit Srivastava 19BCE0382");
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter a no. to find its factorial");
 		int i,t,p=1;

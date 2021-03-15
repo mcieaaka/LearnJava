@@ -25,6 +25,7 @@ public class q8
 	
 	public static void main(String args[])
 	{
+		System.out.println("Harshit Srivastava 19BCE0382");
 		Scanner sc=new Scanner(System.in);
 		int n,i,s;
 		System.out.println("enter size:");

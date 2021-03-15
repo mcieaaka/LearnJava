@@ -7,6 +7,7 @@ interface it1
 }
 class int_func implements it1
 {
+    System.out.println("a="+a+" b="+b);
     int a=8,b=3;
     public void add()
     {
@@ -28,6 +29,7 @@ class int_func implements it1
 class fl_func implements it1
 {
     double a=4.5, b=2.4;
+    System.out.println("a="+a+" b="+b);
     public void add()
     {
         System.out.println(a+b);
@@ -49,6 +51,7 @@ class q20
 {
     public static void main(String args[])
     {
+        System.out.println("Harshit Srivastava 19BCE0382");
         int_func ob1 = new int_func();
         ob1.add();
         ob1.sub();
