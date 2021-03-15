@@ -6,22 +6,24 @@ public class q14
 		Scanner sc = new Scanner(System.in);
 		String s = new String();
 		s=sc.next();
-		String s2= new String();
-		String s3 = new String();
 		System.out.println(s);
+		String s2 = new String();
+		s2="";
+		String s3 = new String();
 		char temp;
 		for(int i=0;i<s.length();i++)
 		{
 			temp=s.charAt(i);
-			if(s2.isLowerCase())
+			s3=String.valueOf(temp);
+			if(Character.isUpperCase(temp))
 			{
-				s2.toUpperCase();
+				s3=s3.toLowerCase();
 			}
 			else
-				s2.toLowerCase();
+				s3=s3.toUpperCase();
 			
-			s3 =s3+s2;
+			s2 = s2+s3;
 		}
-		System.out.println(s3);
+		System.out.println(s2);
 	}
 }
