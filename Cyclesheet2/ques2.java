@@ -33,25 +33,24 @@ public class ques2
         String y = sc.next();
         int c =0;
         try{
-            if(e.substring(0,2)!=y.substring(2))
-            {
-                c++;
-            }
-            if(!(e.charAt(2)=='S'||e.charAt(2)=='F'))
-            {
-                c++;
-            }
-            for(int i=3;i<6;i++)
-            {
-                if(Character.isDigit(e.charAt(i)))
-                {
-                    continue;
-                }else{
-                    c++;
-                }
-            }
-
-            if(c==0)
+            // if(e.substring(0,2)!=y.substring(2))
+            // {
+            //     c++;
+            // }
+            // if(!(e.charAt(2)=='S'||e.charAt(2)=='F'))
+            // {
+            //     c++;
+            // }
+            // for(int i=3;i<6;i++)
+            // {
+            //     if(Character.isDigit(e.charAt(i)))
+            //     {
+            //         continue;
+            //     }else{
+            //         c++;
+            //     }
+            // }
+            if(!(e.matches("\\d{2}[SF]\\d{3}")))
                 throw new InvalidEmpCodeException("Invalid ID");
             else
             {
