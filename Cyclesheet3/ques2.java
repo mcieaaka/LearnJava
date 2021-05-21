@@ -39,12 +39,13 @@ public class ques2
         list.add(t3);
         list.add(t4);
         Collections.sort(list, new SortByState()); 
+        System.out.println("In sorted Order by State:");
 	    for(tourist str: list)
         {
-			System.out.println(str.fspot);
+			System.out.println(str.state+"     "+str.fspot);
 	    }
         Scanner sc= new Scanner(System.in);
-        System.out.print("Enter the tourist spot: ");
+        System.out.print("\nSearch the tourist spot: ");
         String spot = sc.nextLine();
         int c=0;
         Iterator ai = list.iterator();
