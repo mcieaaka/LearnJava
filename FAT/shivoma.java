@@ -37,19 +37,24 @@ class vector{
         }
 }
 public class shivoma {
-        static void dotproduct(int a1, int a2, int b1, int b2)
+        static int dotproduct(int a1, int a2, int b1, int b2)
         {
                 int dp = (a1*b1)+(a2*b2);
-                System.out.println("2D dot product= "+dp);
+                return dp;
         }
-        static void dotproduct(int a1, int a2, int a3, int b1, int b2, int b3)
+        static int dotproduct(int a1, int a2, int a3, int b1, int b2, int b3)
         {
                 int dp2 = (a1*b1)+(a2*b2)+(a3*b3);
-                System.out.println("3D dot product= "+dp2);
+                return dp2;
         }
         static void computeAngle(vector a, vector b)
         {
-                int dp = (a.x*b.x)+(a.y*b.y)+(a.z*b.z);
+                int dp;
+                if(a.z==0&&b.z==0){
+                        dp=dotproduct(a.x,a.y,b.x,b.y);
+                }else{
+                        dp=dotproduct(a.x,a.y,a.z,b.x,b.y,b.z);
+                }
                 double am = Math.sqrt(a.x*a.x + a.y*a.y + a.z*a.z);
                 double bm = Math.sqrt(b.x*b.x + b.y*b.y + b.z*b.z);
                 double angle = Math.acos(dp/(am*bm));
@@ -65,8 +70,10 @@ public class shivoma {
                 vector v = new vector(3,-2);
                 vector U = new vector(5,4,1);
                 vector V = new vector(1,2,1);
-                dotproduct(u.x,u.y,v.x,v.y);
-                dotproduct(U.x,U.y,U.z,V.x,V.y,V.z);
+                int d2=dotproduct(u.x,u.y,v.x,v.y);
+                System.out.println("2D dot product= "+d2);
+                int d3=dotproduct(U.x,U.y,U.z,V.x,V.y,V.z);
+                System.out.println("3D dot product= "+d3);
                 computeAngle(u,v);
                 computeAngle(U,V);
         }
