@@ -37,6 +37,15 @@ class dbmsconnection{
         con.close();
     }
 }
+class pricepu{
+    String unit;
+    String price;
+    pricepu(){}
+    pricepu(String unit,String price){
+        this.unit = unit;
+        this.price = price;
+    }
+}
 public class JavaFXApplication1 extends Application {
     
     @Override
@@ -49,10 +58,23 @@ public class JavaFXApplication1 extends Application {
         tf1.setTranslateY(-50);
         tf1.setMaxWidth(300);
         btn.setText("Submit");
+        
+        Label price = new Label ("Price Distribution");
+        Label p1 = new Label("001 to 100 units – Rs. 10/unit");
+        Label p2 = new Label("100 to 200 units – Rs. 20/unit");
+        Label p3 = new Label("200 to 300 units – Rs. 30/unit");
+        Label p4 = new Label("More than 300 units – Rs. 40/unit");
+        price.setTranslateY(50);
+        p1.setTranslateY(75);
+        p2.setTranslateY(100);
+        p3.setTranslateY(125);
+        p4.setTranslateY(150);
+        
         StackPane root = new StackPane();
         root.getChildren().add(Month);
         root.getChildren().add(tf1);
         root.getChildren().add(btn);
+        root.getChildren().addAll(price,p1,p2,p3,p4);
         btn.setOnAction(new EventHandler<ActionEvent>() {
             
             @Override
@@ -62,13 +84,40 @@ public class JavaFXApplication1 extends Application {
                 try{
                     dbmsconnection c1 = new dbmsconnection();
                     Connection conn = c1.getConnection();
-                    PreparedStatement statement = conn.prepareStatement("select * from ebill where month_name=?");
+                    PreparedStatement statement = conn.prepareStatement("select * from ebill where month_name=?");                    
                     statement.setString(1,a);
                     ResultSet rs = statement.executeQuery();
                     rs.next();
-                    Label l1 = new Label(rs.getString(1));
-                    root.getChildren().addAll(l1);
-                    c1.closeConnection(conn,statement);
+                    Double fp;
+                    Double uu = rs.getDouble(3);
+                    if(uu<=100){
+                        fp = uu*10.0;
+                    }else if(uu>100&& uu<=200){
+                        fp= uu*20.0;
+                    }
+                    else if(uu>200&& uu<=300){
+                        fp= uu*30.0;
+                    }else{
+                        fp = uu*40.0;
+                    }
+                    String i = rs.getString(1).substring(3);
+                    String r = rs.getString(1).substring(0,3);
+                    int temp = Integer.parseInt(i);
+                    String ss = String.valueOf(temp-1);
+                    String newid = r+ss;
+                    
+                    PreparedStatement statement2 = conn.prepareStatement("select * from ebill where bill_id=?");
+                    statement2.setString(1,newid);
+                    ResultSet rs2 = statement2.executeQuery();
+                    rs2.next();
+                    Label l2 = new Label("Previous Month: "+rs2.getString(2)+"\tReading= "+rs.getString(3));
+                    Label l1 = new Label("Month: "+rs.getString(2)+"\tBill in Rs= "+fp.toString()+"\tUnits Consumed = "+rs.getString(3));
+                    l1.setFont(Font.font("Ariel",FontWeight.BOLD,FontPosture.REGULAR,20));
+                    l2.setFont(Font.font("Ariel",FontWeight.BOLD,FontPosture.REGULAR,20));
+                    l1.setTranslateY(-20);
+                    l2.setTranslateY(20);
+                    root.getChildren().addAll(l1,l2);
+                    c1.closeConnection(conn,statement);                    
                 }
                 catch(Exception e){
                     System.out.println(e.getMessage());

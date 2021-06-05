@@ -8,9 +8,6 @@
  *
  * @author HARSHIT
  */
-public class textref {
-    
-}
 import javafx.scene.image.Image;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -122,7 +119,7 @@ class Visitor
 }
 
 
-public class FormApp extends Application {
+public class textref extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
