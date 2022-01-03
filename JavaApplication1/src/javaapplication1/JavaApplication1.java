@@ -18,7 +18,7 @@ public class JavaApplication1 {
      */
     public static void main(String args[]) throws Exception{
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bill","root","Baribitti1!");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bill","root","Password");
         PreparedStatement statement = con.prepareStatement("select * from ebill where month_name='march 2021'");
         ResultSet rs = statement.executeQuery();
         while (rs.next())
